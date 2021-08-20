@@ -1,0 +1,58 @@
+MAIN
+
+//En esta clase emplearemos la clase triangulo, definiendo la cantidad de triangulos que el usuario quiera
+//cargaremos los datos con bucles for, y luego compararemos con otro metodo static dentro de la clase
+//para obtener el indice del triangulo con mayor area, por medio de nuestro get area.
+
+package package5;
+import java.util.Scanner;
+
+public class Main{
+	
+	//metodo estatico para definir el de mayor area.
+	public static int indiceMayor(triangulos){
+
+		int indicem=0;
+		float aream=triangulos[0].getArea();
+
+		for(int i=1;i<triangulos.lenght;i++){
+
+			if(triangulos[i].getArea()>area){
+				aream=triangulos[i].getArea();
+				indice=i;
+			}
+		}
+		return indicem;
+	}
+
+	public static void main (String args[]){
+
+	Scanner entry= new Scanner(System.in);
+	//atributos
+	float ladodes;
+	float ladobase;
+	int cantriangulo;
+
+	//pedimos al usuario la cantidad de triangulos que usara para cargarlos en un array
+	System.out.println("Ingrese la cantidad de triangulos con los que trabajara:\n");
+	cantriangulo=entry.nextInt();
+
+	//creacion del objeto en base a la cantidad introducida por el usuario
+	Triangulo triangulos[] = new Triangulo[cantriangulo];
+
+	for(int i=0;i<triangulos.lenght;i++){
+		System.out.println("Ingrese el largo del lado base para el triangulo nro "+(i+1));
+		triangulos[i].ladodes=entry.nextFloat();
+		System.out.println("Ingrese el largo de los otros lados para el triangulo nro "+(i+1));
+		triangulos[i].ladobase=entry.nextFloat();
+
+		triangulos[i] = new Triangulo(ladodes, ladobase);
+	}
+
+	int indicemayor= indiceMayor(triangulos);
+	System.out.println("El triangulo con mayor area es el numero "+indicemayor );
+	triangulos[indicemayor].showData();
+	System.out.println("Su perimetro es de: "+triangulos[indicemayor].getPerimeter()+"\nSu area es de: "+triangulos[indicemayor].getArea());
+
+	}
+}
