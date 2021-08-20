@@ -1,0 +1,37 @@
+TRIANGULO ISOSCELES
+
+//En esta clase emplearemos los atributos y los metodos necesarios para definir el lado desigual y la base de 2 lados
+//crearemos el metodo constructor, obtendremos perimetro, obtendremos area, y mostraremos los datos del triangulo con mayor area por ej
+
+package package5;
+
+public class Triangulo{
+	
+	//atributos
+	float ladodes;
+	float ladobase;
+
+	public Triangulo(int ladodes, int ladobase){
+		this.ladodes=ladodes;
+		this.ladobase=ladobase;
+	}
+
+	//metodos
+
+	public float getPerimeter(){
+		float perimeter= ladodes+(2*ladobase);
+		return perimeter;
+	}
+
+	public float getArea(){
+		float area= ((2*ladobase)*ladodes)/2;
+		return area;
+	}
+
+	//metodo show datos
+
+	public String showData(){
+		return= "Triangulo con lados base: "+ladobase+"\nLado desigual: "+ladodes;
+	}
+
+}
