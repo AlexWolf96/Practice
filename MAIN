@@ -1,0 +1,63 @@
+MAIN
+
+//en esta clase ejecutaremos nuestro metodo main, empleando la clase monito
+
+package package2;
+
+public class Main{
+	
+	public static void main(String args[]){
+
+		//atributos
+
+		int ejex,ejey;
+		char move='E';
+
+		//creacion del objeto
+
+		Monito monito = new Monito(0,0);
+
+		JoptionPane.showMessageDialog(null,"Welcome to move the MoNitO! XD");
+		JOptionPane.showMessageDialog(null,"Actually the monito is in("+monito.getEjex+","+monito.getEjey+")\nMove it and see the magic ;)");
+
+		//bucle condicional
+
+		while(move!=F){
+
+			move=(JOptionPane.showInputDialog(null,"W to go up - S to go Down\nA to go Left - D to go Right\n F to exit program")).charAt(0);
+			//creamos switch para las multiples opciones
+			switch(move){
+				case w,W:
+				{
+				monito.setUp();
+				break;
+				}
+				case s,S:
+				{
+				monito.setDown();
+				break;
+				}
+				case a,A:
+				{
+				monito.setLeft();
+				break;
+				}
+				case d,D:
+				{
+				monito.setRight();
+				break;
+				}
+				case f,F:
+				{
+				JOptionPane.showMessageDialog(null,"thanks for mOvE tHe mOnItO!");
+				break;
+				}
+				default:
+				{
+				JOptionPane.showMessageDialog(null,"character no recogniced\nUse only W,S,D,A or E to exit program");
+				}
+			}
+		}
+		System.out.print("Thanks for use this soft, monito is in: ("+monito.getEjex()+","+monito.getEjey()+")");
+	}
+}
