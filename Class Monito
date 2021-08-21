@@ -1,9 +1,7 @@
-MONITO
-
 //En esta clase emplearemos los atributos y metodos necesarios para hacer que nuestro monito se mueva por coordenadas
 //mientras monito se mueve, iremos mostrando las coordenadas actuales.
 
-package package2;
+package package1;
 
 public class Monito{
 	
@@ -16,7 +14,7 @@ public class Monito{
 
 	public Monito(int ejex,int ejey){
 		this.ejex=ejex;
-		this.ejey.ejey;
+		this.ejey=ejey;
 	}
 
 	//metodo para mover uno hacia arriba
@@ -40,8 +38,13 @@ public class Monito{
 		System.out.println("[1 move left] - position:("+ejex+","+ejey+")");
 	}
 
-	//getter de ejex y ejey
+	//getters de ejex y ejey
 
-	public int getEjex(){
-	
-	}
+		public int getEjex(){
+			return ejex;
+		}
+
+		public int getEjey(){
+			return ejey;
+		}
+}
