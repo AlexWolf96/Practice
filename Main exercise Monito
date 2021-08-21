@@ -1,8 +1,7 @@
-MAIN
-
 //en esta clase ejecutaremos nuestro metodo main, empleando la clase monito
 
-package package2;
+package package1;
+import javax.swing.JOptionPane;
 
 public class Main{
 	
@@ -17,37 +16,37 @@ public class Main{
 
 		Monito monito = new Monito(0,0);
 
-		JoptionPane.showMessageDialog(null,"Welcome to move the MoNitO! XD");
-		JOptionPane.showMessageDialog(null,"Actually the monito is in("+monito.getEjex+","+monito.getEjey+")\nMove it and see the magic ;)");
+		JOptionPane.showMessageDialog(null,"Welcome to move the MoNitO! XD");
+		JOptionPane.showMessageDialog(null,"Actually the monito is in("+monito.getEjex()+","+monito.getEjey()+")\nMove it and see the magic ;)");
 
 		//bucle condicional
 
-		while(move!=F){
+		while(move!='F' || move!='f'){
 
 			move=(JOptionPane.showInputDialog(null,"W to go up - S to go Down\nA to go Left - D to go Right\n F to exit program")).charAt(0);
 			//creamos switch para las multiples opciones
 			switch(move){
-				case w,W:
+				case 'w','W':
 				{
 				monito.setUp();
 				break;
 				}
-				case s,S:
+				case 's','S':
 				{
 				monito.setDown();
 				break;
 				}
-				case a,A:
+				case 'a','A':
 				{
 				monito.setLeft();
 				break;
 				}
-				case d,D:
+				case 'd','D':
 				{
 				monito.setRight();
 				break;
 				}
-				case f,F:
+				case 'f','F':
 				{
 				JOptionPane.showMessageDialog(null,"thanks for mOvE tHe mOnItO!");
 				break;
