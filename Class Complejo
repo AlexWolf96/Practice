@@ -1,0 +1,89 @@
+//Constrir un programa para trabajar con 2 numeros complejos
+//crearemos un constructor que sea el numero complejo
+//numero compuesto: (5+1)+(2+2i)=7+3i
+
+package package1;
+import javax.swing.JOptionPane;
+
+public class Complejo{
+
+    //atributos
+    //considera
+    private int numreal1;int numreal2;
+    private int numimagine1; int numimagine2;
+
+    String message;
+
+    //metodo constructor
+
+    public Complejo(int numreal1, int numimagine1, int numreal2, int numimagine2){
+        this.numreal1=numreal1;
+        this.numimagine1=numimagine1;
+        this.numreal2=numreal2;
+        this.numimagine2=numimagine2;
+    }
+
+    //suma de complejo
+
+    public String suma(){
+        int sumarz=numreal1+numreal2;
+        int sumaim=numimagine1+numimagine2;
+        return "("+numreal1+"+"+numimagine1+"i)+("+numreal2+"+"+numimagine2+"i)= ("+sumarz+"+"+sumaim+"i)";
+    }
+
+    //multiplicacion de complejo
+    public String multiplicacion(){
+        int multiplicacionrz=(numreal1*numreal2)+(numreal1*numimagine2);
+        int multiplicacionim=(numreal2*numreal2)+(numreal2*numimagine2);
+        return "("+numreal1+"+"+numimagine1+"i)+("+numreal2+"+"+numimagine2+"i)= ("+multiplicacionrz+"+"+multiplicacionim+"i)";
+    }
+
+    //comparacion de 2 numeros complejos
+    public void comparar(){
+        if (numreal1==numreal2 && numimagine1==numimagine2){
+            JOptionPane.showMessageDialog(null,"Los complejos ingresados son iguales!");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Los complejos ingresados no son iguales");
+        }
+    }
+
+    //multiplicar por 1 entero
+
+    public String multiplicarEntero(){
+        int entero=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese un numero entero: "));
+        int opcion=Integer.parseInt(JOptionPane.showInputDialog(null,"1.Multiplicar por el complejo ("+numreal1+"+"+numimagine1+"i)\n2.Multiplicar por el complejo ("+numreal2+"+"+numimagine2+"i)"));
+        if(opcion==1){
+            int resul1=(entero*numreal1);
+            int resul2=(entero*numimagine1);
+            message = resul1+"+"+resul2+"i";
+        }
+        if(opcion==2)
+        {
+            int resul1=(entero*numreal2);
+            int resul2=(entero*numimagine2);
+            message = resul1+"+"+resul2+"i";
+        }
+        return message;
+    }
+
+    //getters
+
+    public int getReal1(){
+        return numreal1;
+    }
+
+    public int getImagine1(){
+        return numimagine1;
+    }
+
+    public int getReal2(){
+        return numreal2;
+    }
+
+    public int getImagine2(){
+        return numimagine2;
+    }
+
+}
