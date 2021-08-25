@@ -1,0 +1,64 @@
+//En la parte main podremos cargar nuestro numero compuesto
+//realizaremos un menu que nos permita sumar 2 numeros complejos
+//multiplicarlos, comparar a ver si son iguales o no, multiplicar un numero complejo por entero
+
+package package1;
+import javax.swing.JOptionPane;
+
+public class Main{
+
+	public static void main(String args[]){
+
+		//atributos
+
+		int numreal1, numreal2;
+		int numimagine1, numimagine2;
+
+		Complejo complejo;
+
+		JOptionPane.showMessageDialog(null,"A continuacion debera cargar 2 numeros complejos\nUna vez realizada la carga\npodra operar con ellos");
+        //carga del complejo 1
+        numreal1=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero real del complejo 1(>Rz< +- Im i)"));
+        numimagine1=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero imaginario del complejo 1(Rz +- >Im<i)"));
+        //carga del complejo 2
+        numreal2=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero real del complejo 2(>Rz< +- Im i)"));
+        numimagine2=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero imaginario del complejo 2(Rz +- >Im<i)"));
+   
+		complejo = new Complejo(numreal1, numimagine1, numreal2, numimagine2);
+
+		char opcion=(JOptionPane.showInputDialog(null,"a.Sumar 2 numeros complejos\nb.Multiplicar 2 numeros complejos\nc.Comparar numeros complejos\nd.Multiplicar complejos por 1 entero\ne.Salir del programa")).charAt(0);
+		while(opcion!='e')
+		{
+			switch(opcion){
+				case 'a':
+				{
+					System.out.println(complejo.suma());
+					break;
+				}
+				case 'b':
+				{
+					System.out.println(complejo.multiplicacion());
+					break;
+				}
+				case 'c':
+				{
+					complejo.comparar();
+					break;
+				}
+				case 'd':
+				{
+					System.out.println(complejo.multiplicarEntero());
+					break;
+				}
+				default:
+				{
+					JOptionPane.showMessageDialog(null, "OpcionInvalida. Ingrese una correcta");
+					opcion=0;
+					break;
+				}
+			}
+			opcion=(JOptionPane.showInputDialog(null,"a.Sumar 2 numeros complejos\nb.Multiplicar 2 numeros complejos\nc.Comparar numeros complejos\nd.Multiplicar complejos por 1 entero\ne.Salir del programa")).charAt(0);
+		}
+		JOptionPane.showMessageDialog(null,"Gracias por utilizar Complejo");
+	}
+}
